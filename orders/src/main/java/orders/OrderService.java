@@ -1,6 +1,6 @@
 package orders;
 
-import org.springframework.core.annotation.Order;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -8,9 +8,11 @@ import java.util.List;
 
 @Service
 public class OrderService {
-    @Repository
+    @Autowired
     private OrderRepository orderRepository;
 
     public List<Order> list() {
+
+        return orderRepository.findAll();
     }
 }
